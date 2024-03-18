@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import items from "../data";
-import { Card } from "../components";
+import { Card, Header } from "../components"; // Import Header component
 
 export const Home = () => {
   const [cartItems, setCartItems] = useState(
@@ -44,10 +44,13 @@ export const Home = () => {
   }, [itemCount]);
 
   return (
-    <section className="max-w-7xl flex justify-between flex-wrap py-5 m-auto ">
-      {items.map((item) => (
-        <Card item={item} handleCart={handleCart} key={item.id} />
-      ))}
-    </section>
+    <>
+      <Header itemCount={itemCount} />
+      <section className="max-w-7xl flex justify-between flex-wrap py-5 m-auto ">
+        {items.map((item) => (
+          <Card item={item} handleCart={handleCart} key={item.id} />
+        ))}
+      </section>
+    </>
   );
 };

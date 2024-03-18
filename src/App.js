@@ -6,7 +6,6 @@ import { Header, Footer } from "./components";
 function App() {
   return (
     <>
-      <Header />
       <main>
         <AllRoutes />
       </main>
